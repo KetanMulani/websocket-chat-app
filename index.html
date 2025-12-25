@@ -24,9 +24,11 @@
             const room = document.getElementById("room").value;
             const username = document.getElementById("username").value;
 
-            ws = new WebSocket(
-                `ws://127.0.0.1:8000/ws/${room}?username=${username}`
-            );
+        ws = new WebSocket(
+            `wss://websocket-chat-app.onrender.com/ws/chat/${room}?username=${username}`
+        );
+
+
 
             ws.onmessage = (event) => {
                 document.getElementById("output").innerHTML +=
